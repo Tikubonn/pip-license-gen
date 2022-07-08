@@ -5,7 +5,7 @@
 ![](https://img.shields.io/badge/python-3.10-blue)
 ![](https://img.shields.io/github/license/tikubonn/pip-license-gen)
 
-pip-license-gen はインストール済みパッケージのライセンスファイルを統合して出力するコマンドを追加します。
+pip-license-gen はインストール済みパッケージのライセンスファイルをまとめて出力するコマンドを追加します。
 統合されたライセンスファイルを得るには `pip-license-gen` コマンドを実行します。
 
 ```cmd
@@ -58,7 +58,7 @@ https://requests.readthedocs.io
 ```
 
 パッケージの中にはまれにライセンス情報が欠落しているものがあります。
-pip-license-gen はJSON形式で記述された外部ファイルからライセンスファイルを作成することもできます。
+pip-license-gen はJSON形式で記述された外部ファイルからもライセンスファイルを作成することもできます。
 これはパッケージ以外のライセンス情報を混ぜ込むときにも有用です。
 
 ```json
