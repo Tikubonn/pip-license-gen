@@ -1,0 +1,37 @@
+
+[build-system]
+requires = ["setuptools >= 77.0.3"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pip-license-gen"
+version = "0.2.0"
+dependencies = [
+  "pip-tree@git+https://github.com/tikubonn/pip-tree.git#egg=pip-tree"
+]
+requires-python = ">=3.12"
+authors = [
+  {name = "tikubonn"}
+]
+maintainers = [
+  {name = "tikubonn"}
+]
+description = "Prints the license information for the specified package and its dependencies."
+readme = "README.md"
+license = "AGPL-3.0"
+license-files = ["LICEN[CS]E"]
+keywords = []
+classifiers = [
+  "Programming Language :: Python"
+]
+
+[project.urls]
+Homepage = "https://github.com/tikubonn/pip-license-gen"
+Documentation = "https://github.com/tikubonn/pip-license-gen/README.md"
+Repository = "https://github.com/tikubonn/pip-license-gen.git"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[project.scripts]
+pip-license-gen = "pip_license_gen:main"
