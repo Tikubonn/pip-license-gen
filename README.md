@@ -1,9 +1,10 @@
 
 # pip-license-gen
 
-![](https://img.shields.io/badge/version-0.1.0-gray)
-![](https://img.shields.io/badge/python-3.10-blue)
-![](https://img.shields.io/github/license/tikubonn/pip-license-gen)
+## Overview
+
+![](https://img.shields.io/badge/Python-3.12-blue)
+![](https://img.shields.io/badge/License-AGPLv3-blue)
 
 pip-license-gen はインストール済みパッケージのライセンスファイルをまとめて出力するコマンドを追加します。
 統合されたライセンスファイルを得るには `pip-license-gen` コマンドを実行します。
@@ -57,59 +58,6 @@ https://requests.readthedocs.io
 ...
 ```
 
-パッケージの中にはまれにライセンス情報が欠落しているものがあります。
-pip-license-gen はJSON形式で記述された外部ファイルからもライセンスファイルを作成することもできます。
-これはパッケージ以外のライセンス情報を混ぜ込むときにも有用です。
-
-```json
-[
-  {
-    "Name": "json5",
-    "Home-page": "https://github.com/json5/json5",
-    "LicenseURLs": [
-      "https://raw.githubusercontent.com/json5/json5/main/LICENSE.md"
-    ]
-  },
-  {
-    "Name": "ordered-set",
-    "Home-page": "https://github.com/rspeer/ordered-set",
-    "LicenseURLs": [
-      "https://raw.githubusercontent.com/rspeer/ordered-set/master/MIT-LICENSE"
-    ]
-  },
-  {
-    "Name": "Python",
-    "Home-page": "https://github.com/python/cpython",
-    "LicenseURLs": [
-      "https://raw.githubusercontent.com/python/cpython/9d38120e335357a3b294277fd5eff0a10e46e043/LICENSE"
-    ]
-  }
-]
-```
-
-```cmd
-pip-license-gen --from-json example.json
-```
-
-```txt
-======================================================================================
-License file 'https://raw.githubusercontent.com/json5/json5/main/LICENSE.md' of json5.
-https://github.com/json5/json5
-======================================================================================
-
-MIT License
-
-Copyright (c) 2012-2018 Aseem Kishore, and [others].
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-...
-```
-
 pip-license-gen は pip-tree と同様に pipenv にも対応しています。
 `pipenv shell` もしくは `pipenv run` とともに使用することで pipenv 環境を参照するようになります。
 
@@ -138,21 +86,26 @@ and will comply with the following terms and conditions:
 
 その他、細かい部分に関しては `pip-license-gen -h` コマンドをご参照ください。
 
-```cmd
-pip-license-gen -h
-```
-
 ## Install
 
-```cmd
-python setup.py install
+```shell
+pip install .
 ```
 
-## Require packages 
+## Donation
 
-* requests: https://github.com/psf/requests
-* pip-tree: https://github.com/tikubonn/pip-tree 
+<a href="https://buymeacoffee.com/tikubonn" target="_blank"><img src="doc/img/qr-code.png" width="3000px" height="3000px" style="width:150px;height:auto;"></a>
 
-## License 
+もし本パッケージがお役立ちになりましたら、少額の寄付で支援することができます。<br>
+寄付していただいたお金は書籍の購入費用や日々の支払いに使わせていただきます。
+ただし、これは寄付の多寡によって継続的な開発やサポートを保証するものではありません。ご留意ください。
 
-The MIT License.
+If you found this package useful, you can support it with a small donation.
+Donations will be used to cover book purchases and daily expenses.
+However, please note that this does not guarantee ongoing development or support based on the amount donated.
+
+## License
+
+© 2022-2026 tikubonn
+
+[pip-license-gen](https://github.com/tikubonn/pip-license-gen) licensed under the [AGPLv3](./LICENSE).
