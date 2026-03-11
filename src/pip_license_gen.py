@@ -144,10 +144,10 @@ def get_pip_info_tree (packages:list[str]) -> "list[dict[str, typing.Any]]":
 
 def main ():
   parser = argparse.ArgumentParser(description="Dump all licenses of installed package by pip.")
-  parser.add_argument("packages", nargs="*", help="Package names for dump.")
+  parser.add_argument("packages", nargs="*", default=[], help="Package names for dump.")
   parser.add_argument("-o", "--output-file", type=str, default="", help="Path of output file. (default is stdout).")
   parser.add_argument("--debug", action="store_true", help="If it enabled, this will print out debug log.")
-  parser.add_argument("--ignore-packages", nargs="*", help="List of ignore packages.")
+  parser.add_argument("--ignore-packages", nargs="*", default=[], help="List of ignore packages.")
   args = parser.parse_args()
   if args.debug:
     logging.basicConfig(level=logging.DEBUG)
