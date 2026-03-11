@@ -147,20 +147,15 @@ def main ():
   parser.add_argument("packages", nargs="*", help="Package names for dump.")
   parser.add_argument("-o", "--output-file", type=str, default="", help="Path of output file. (default is stdout).")
   parser.add_argument("--debug", action="store_true", help="If it enabled, this will print out debug log.")
+  parser.add_argument("--ignore-packages", nargs="*", help="List of ignore packages.")
   args = parser.parse_args()
-
-  logging.basicConfig(
-    encoding="utf-8", 
-    level=logging.INFO
-  )
-
   if args.debug:
-    stderr_handler = logging.StreamHandler(sys.stderr)
-    root_logger = logging.getLogger()
-    root_logger.addHandler(stderr_handler)
-
+    logging.basicConfig(level=logging.DEBUG)
+  else:
+    logging.basicConfig(level=logging.INFO)
   packages = get_pip_info_tree(args.packages)
   packages = unique_list(package_tree_as_list(packages))
+  packages = [pkg for pkg in packages if pkg["name"] not in args.ignore_packages] #Delete ignored packages.
   if args.output_file:
     stream = opensafer.open_safer(args.output_file, "w", encoding="utf-8")
   else:
