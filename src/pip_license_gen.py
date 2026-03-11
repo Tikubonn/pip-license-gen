@@ -165,8 +165,8 @@ def main ():
     stream = opensafer.open_safer(args.output_file, "w", encoding="utf-8")
   else:
     stream = os.fdopen(os.dup(sys.stdout.fileno()), "w", encoding="utf-8")
-  with stream:
-    dump_license(packages, file=stream, separator="=")
+  with stream as unwrapped_stream:
+    dump_license(packages, file=unwrapped_stream, separator="=")
 
 if __name__ == "__main__":
   main()
