@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "pip-license-gen"
-version = "0.2.0"
+version = "0.2.1"
 dependencies = [
   "pip-tree@git+https://github.com/tikubonn/pip-tree.git#egg=pip-tree"
 ]
